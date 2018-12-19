@@ -1,0 +1,19 @@
+server:
+  port: 8040
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8761/eureka/
+spring:
+  application:
+    name: springcloud.gateway.zuul
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream, health, info
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    

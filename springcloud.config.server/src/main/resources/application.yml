@@ -1,0 +1,16 @@
+server:
+  port: 9999
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8761/eureka/
+spring:
+  application:
+    name: springcloud.config.server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/asan3524/config
+          username: lsb3524@163.com
+          password: txyoudi244882            

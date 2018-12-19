@@ -1,0 +1,10 @@
+server:
+  port: 8999
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8761/eureka/
+spring:
+  application:
+    name: springcloud.hystrix.dashboard
+    

@@ -1,0 +1,20 @@
+server:
+  port: 8998
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: springcloud.hystrix.turbine
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+turbine:
+  app-config: springcloud.movie.service,springcloud.user.service,springcloud.gateway.zuul
+  clusterNameExpression: "'default'"
+    
