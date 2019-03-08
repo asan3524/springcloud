@@ -1,6 +1,7 @@
 package com.springcloud.user.service.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,6 +37,7 @@ public class MovieController {
 	@GetMapping("/{id}")
 	@ApiOperation(value = "获取用户", notes = "根据用户ID，获取用户详情")
 	public UserInfo findById(@PathVariable Long id) {
+		System.out.println("---------------------");
 		UserInfo user = userFeignClient.findById(id);
 		return user;
 	}

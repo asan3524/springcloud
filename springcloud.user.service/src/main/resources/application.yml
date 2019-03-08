@@ -4,6 +4,10 @@ eureka:
   client:
     service-url:
       defaultZone: http://admin:admin@localhost:8761/eureka/
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:9099/user/
 spring:
   application:
     name: springcloud.user.service
@@ -15,9 +19,9 @@ spring:
       ddl-auto: none
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://47.91.208.194:3306/stock?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF8&useSSL=false&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true
-    username: stock
-    password: JXJTpi5775!@#$
+    url: jdbc:mysql://114.67.224.99:3306/microservice?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF8&useSSL=false&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true
+    username: microservice
+    password: bitlife_microservice_888T3!
 logging:
   level:
     root: INFO

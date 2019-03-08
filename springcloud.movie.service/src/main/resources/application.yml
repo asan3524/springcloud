@@ -4,6 +4,12 @@ eureka:
   client:
     service-url:
       defaultZone: http://admin:admin@localhost:8761/eureka/
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:9099/user/
+    client:
+      access-token-uri: http://localhost:9099/user/
 spring:
   application:
     name: springcloud.movie.service
@@ -32,3 +38,14 @@ management:
 feign:
   hystrix:
     enabled: true
+#Hystrix THREAD模式下，feign无法找到上下文中的令牌，导致令牌无法传递
+#方案一：自定义HystrixConcurrencyStrategy
+#方案二：将线程策略设置为SEMAPHORE（官方不推荐）
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+          strategy: SEMAPHORE
